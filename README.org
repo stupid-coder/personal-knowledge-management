@@ -1,0 +1,8 @@
+#+TITLE: 个人知识管理
+
+* GNU软件
+* 开源库
+** 事件库
+   + [[open/libev][libev]] :: 基于lievent后的事件库。
+     
+     

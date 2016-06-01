@@ -1,0 +1,20 @@
+#+TITLE: libc - clock_getres&clock_gettime&clock_settime 函数说明
+#+OPTIONS: ^:nil
+#+STARTUP: indent overview
+
+* 函数原型
+  #+BEGIN_SRC C
+  #include <time.h>
+  int clock_getres(clockid_t clk_id, struct timespec *res);
+  int clock_gettime(clockid_t clk_id, struct timespec *tp);
+  int clock_settime(clockid_t clk_id, const struct timespec *tp);
+  #+END_SRC
+
+* 函数说明
+** 参数说明
+   #+CAPTION: 参数说明
+   | 参数   | 类型      | 说明 |
+   |--------+-----------+------|
+   | clk_id | clockid_t |      |
+* clock_getres
+  

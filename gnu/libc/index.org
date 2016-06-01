@@ -1,0 +1,8 @@
+#+TITLE: gnu - libc 相关函数说明
+#+OPTION: ^:nil
+#+STARTUP: indent overview
+
+
+* 函数索引
+** [[functions/clock_gettime.org][clock_gettime]]
+   

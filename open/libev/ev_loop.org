@@ -190,4 +190,9 @@ struct ev_loop *ev_default_loop_ptr=0;
 
 
 
-  
+* 有关函数
+** ev_default_loop
+初始化函数，用来初始化一个循环内核引擎。
+#+BEGIN_SRC C
+
+#+END_SRC

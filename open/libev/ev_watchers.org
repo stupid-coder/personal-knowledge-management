@@ -302,3 +302,5 @@ ev_io_set((ev),(fd),(events)); \
 #+END_SRC
 
 将ev_TYPE_init将会复合调用 ev_init + ev_TYPE_set 两个宏。
+
+

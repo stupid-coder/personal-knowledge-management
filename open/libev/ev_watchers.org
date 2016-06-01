@@ -247,4 +247,58 @@
    用于在一个loop轮询中嵌入一个loop轮询。
 
 * 监控器的相关函数说明
-  
+监控器拥有多个宏和函数用来操作监控器。
+
+** 初始化宏
+
+两种初始化逻辑，ev_init + ev_TYPE_set 或者 ev_TYPE_init 来初始化对应的
+TYPE监控器。
+
+*** 基础初始化宏
+
+#+BEGIN_SRC C
+#define ev_init(ev,cb_) do { \
+((ev_watcher*)(void*)(ev))->acive = \ 
+((ev_watcher*)(void*)(ev))->pending = 0; \
+ev_set_priority((ev), 0); \
+ev_set_cb((ev),cb_); \
+} while(0)
+#+END_SRC
+
+设置公共的EV_WATCHER成员变量为对应的值，并设定回调函数。
+
+*** 继承初始化宏
+
+继承初始化宏，用来初始化除了EV_WATCHER定义的基础成员外的其他成员变量。
+
+这里只看一下两个初始化宏：
+
+**** ev_io_set
+
+#+BEGIN_SRC C
+#define ev_io_set(ev,fd_,events_) do { (ev)->fd = (fd_); (ev)->events = (events_) | EV_IOFDST; } while(0)
+#+END_SRC
+
+初始化ev_io监控器中的文件描述符和监听事件类型。
+
+**** ev_timer_set
+
+#+BEGIN_SRC C
+#define ev_timer_set(ev,after_,repeat_) do { \
+((ev_watcher_time*)(ev))->at=(after_); \
+(ev)->repeat = (repeat_); \
+} while(0)
+#+END_SRC
+
+用来设置时间监控器对应的时间和重复周期。
+
+*** 复合初始化宏
+
+#+BEGIN_SRC C
+#define ev_io_init(ec,cb,fd,events) do { \
+ev_init((ev),(cb)); \
+ev_io_set((ev),(fd),(events)); \
+} while(0)
+#+END_SRC
+
+将ev_TYPE_init将会复合调用 ev_init + ev_TYPE_set 两个宏。

@@ -4,5 +4,6 @@
 
 
 * 函数索引
+** [[functions/adjtime.org][adjtime]]
 ** [[functions/clock_gettime.org][clock_gettime]]
    

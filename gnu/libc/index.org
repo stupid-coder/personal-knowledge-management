@@ -6,4 +6,7 @@
 * 函数索引
 ** [[functions/adjtime.org][adjtime]]
 ** [[functions/clock_gettime.org][clock_gettime]]
-   
+** [[functions/clock_getres-clock_gettime-clock_settime.org][clock_getres]]
+** [[functions/clock_getres-clock_gettime-clock_settime.org][clock_settime]]
+** [[functins/gettimeofday-settimeofday.org][gettimeofday]]
+** [[functions/gettimeofday-settimeofday.org][settimeofday]]   
